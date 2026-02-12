@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Video của Nhóm 1</title>
+
+<style>
+body{
+    margin:0;
+    font-family: Arial;
+    background: linear-gradient(135deg,#4e73df,#1cc88a);
+}
+
+h1{
+    text-align:center;
+    color:white;
+    padding:20px;
+}
+
+.container{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+    gap:20px;
+    padding:30px;
+}
+
+.video-card{
+    background:white;
+    border-radius:15px;
+    padding:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+    transition:0.3s;
+}
+
+.video-card:hover{
+    transform:scale(1.05);
+}
+
+video{
+    width:100%;
+    border-radius:10px;
+}
+
+.back-btn{
+    display:block;
+    width:150px;
+    margin:20px auto;
+    padding:10px;
+    text-align:center;
+    background:white;
+    border-radius:25px;
+    text-decoration:none;
+    font-weight:bold;
+    color:#333;
+    transition:0.3s;
+}
+
+.back-btn:hover{
+    background:#4e73df;
+    color:white;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Video Của Nhóm</h1>
+
+<div class="container">
+
+    <div class="video-card">
+        <h3>HELUUU</h3>
+        <video controls>
+            <source src="img/7518991025932.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="video-card">
+        <h3>Hai anh Chưa gì</h3>
+        <video controls>
+            <source src="img/7529594483009.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="video-card">
+        <h3>Hai anh này cũng chưa gì</h3> 
+        <video controls>
+            <source src="img/7529588032319.mp4" type="video/mp4">
+        </video>
+    </div>
+
+</div>
+
+<a href="index.html" class="back-btn">← Quay lại</a>
+
+</body>
+</html>

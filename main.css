@@ -1,0 +1,259 @@
+.fa-facebook{
+    font-size:25px;
+    color:#1877f2;
+}
+
+.fa-facebook:hover{
+    transform:scale(1.2);
+}
+body{
+    background: linear-gradient(-45deg, #4e73df, #1cc88a, #36b9cc, #f6c23e);
+    background-size: 400% 400%;
+    animation: gradientMove 12s ease infinite;
+}
+
+@keyframes gradientMove{
+    0%{background-position: 0% 50%;}
+    50%{background-position: 100% 50%;}
+    100%{background-position: 0% 50%;}
+}
+.card{
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeUp 0.8s ease forwards;
+    transition: 0.4s;
+    display: inline-block;
+}
+
+.card:nth-child(1){ animation-delay: 0.2s; }
+.card:nth-child(2){ animation-delay: 0.4s; }
+.card:nth-child(3){ animation-delay: 0.6s; }
+
+@keyframes fadeUp{
+    to{
+        opacity:1;
+        transform: translateY(0);
+    }
+}
+
+.avatar{
+    transition: 0.3s;
+}
+
+.avatar:hover{
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(0,123,255,0.6);
+}
+.popup-content{
+    animation: zoomIn 0.4s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+@keyframes zoomIn{
+    from{
+        transform: scale(0.6);
+        opacity: 0;
+    }
+    to{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.popup-content:hover{
+    transform: scale(1.05);
+    box-shadow: 0 16px 33px rgba(0,0,0,0.3);
+}
+
+.card:hover {
+    transform: scale(1.1) translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.35);
+}
+.btn-video{
+    display: inline-block;
+    margin: 15px;
+    padding: 15px 30px;
+    background: #ffffff;
+    color: #333;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-video:hover{
+    background: #4e73df;
+    color: white;
+    transform: scale(1.05);
+}
+.card{
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeUp 0.8s ease forwards;
+}
+
+/* Delay từng card */
+.card:nth-child(1){ animation-delay: 0.2s; }
+.card:nth-child(2){ animation-delay: 0.4s; }
+.card:nth-child(3){ animation-delay: 0.6s; }
+.card:nth-child(4){ animation-delay: 0.8s; }
+.card:nth-child(5){ animation-delay: 1s; }
+.card:nth-child(6){ animation-delay: 1.2s; }
+.card:nth-child(7){ animation-delay: 1.4s; }
+.card:nth-child(8){ animation-delay: 1.6s; }
+
+@keyframes fadeUp{
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.card{
+    transition: all 0.4s ease;
+}
+
+.card:hover{
+    transform: scale(1.08) translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+.card{
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,0.4),
+        transparent
+    );
+    transition: 0.5s;
+}
+
+.card:hover::before{
+    left: 100%;
+}
+.video-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding: 40px;
+}
+.video-card {
+    width: 260px;        /* nhỏ lại */
+    padding: 15px;
+    border-radius: 15px;
+    background: white;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    transition: 0.4s;
+}
+
+
+.card img {
+    width: 100%;
+    height: 400px;   /* chỉnh bằng 2 bên */
+    object-fit: cover;
+    border-radius: 15px;
+}
+.image-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Popup nền mờ */
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    animation: fadeIn 0.3s ease;
+}
+
+/* Ảnh phóng to */
+.popup-content {
+    margin: auto;
+    display: block;
+    max-width: 70%;
+    border-radius: 20px;
+    animation: zoomIn 0.4s ease;
+}
+
+/* Nút đóng */
+.close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+/* Hiệu ứng */
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes zoomIn {
+    from {transform: scale(0.7);}
+    to {transform: scale(1);}
+}
+.card img {
+    transition: 0.4s ease;
+    cursor: pointer;
+}
+
+.card img:hover {
+    transform: scale(1.05);
+}
+.popup-content{
+    background:white;
+    color:#333;
+    padding:30px;
+    border-radius:15px;
+    width:350px;
+    text-align:center;
+    position:relative;
+    animation:popupZoom 0.4s ease;
+}
+
+@keyframes popupZoom{
+    0%{
+        transform: scale(0.6);
+        opacity:0;
+    }
+    100%{
+        transform: scale(1);
+        opacity:1;
+    }
+}
+.card{
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transform-style: preserve-3d;
+}
+
+.card:hover{
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+.card {
+    text-align: center;
+}
+
+.video-card video {
+    width: 100%;
+    height: 200px;          /* tất cả video cùng chiều cao */
+    object-fit: cover;      /* không méo hình */
+    border-radius: 10px;
+}

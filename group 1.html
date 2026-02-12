@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <script>
+const text = "Nhóm 1 - Giới Thiệu Nhóm 1";
+const title = document.querySelector("h1");
+title.innerHTML = "";
+let i = 0;
+
+function typeEffect(){
+    if(i < text.length){
+        title.innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeEffect, 70);
+    }
+}
+
+typeEffect();
+</script>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <title>Nhóm 1 - Giới thiệu  thành viên nhóm</title>
+    <link href="main.css" rel="stylesheet">
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:'Poppins', sans-serif;
+        }
+
+        body{
+            background: linear-gradient(135deg, #4e73df, #1cc88a);
+            color:white;
+            text-align:center;
+        }
+
+        header{
+            padding:40px 20px;
+        }
+
+        header h1{
+            font-size:42px;
+            margin-bottom:10px;
+        }
+
+        header p{
+            font-size:18px;
+            opacity:0.9;
+        }
+
+        .members{
+            display:flex;
+            justify-content:center;
+            flex-wrap:wrap;
+            gap:20px;
+            padding:40px 20px;
+        }
+
+        .card{
+            background:white;
+            color:#333;
+            width:220px;
+            padding:20px;
+            border-radius:15px;
+            cursor:pointer;
+            transition:0.3s;
+            box-shadow:0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .card:hover{
+            transform:translateY(-10px);
+        }
+
+        .card img{
+            width:100px;
+            height:100px;
+            border-radius:50%;
+            object-fit:cover;
+            margin-bottom:15px;
+        }
+
+        .card h3{
+            margin-bottom:5px;
+        }
+
+        /* Popup */
+        .popup{
+            display:none;
+            position:fixed;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+            background:rgba(0,0,0,0.6);
+            justify-content:center;
+            align-items:center;
+        }
+
+        .popup-content{
+            background:white;
+            color:#333;
+            padding:30px;
+            border-radius:15px;
+            width:350px;
+            text-align:center;
+            position:relative;
+            animation:fadeIn 0.4s ease;
+        }
+
+        .popup-content h2{
+            margin-bottom:10px;
+        }
+
+        .close{
+            position:absolute;
+            top:10px;
+            right:15px;
+            font-size:22px;
+            cursor:pointer;
+            color:red;
+        }
+
+        @keyframes fadeIn{
+            from{transform:scale(0.8); opacity:0;}
+            to{transform:scale(1); opacity:1;}
+        }
+
+        footer{
+            padding:20px;
+            background:rgba(0,0,0,0.2);
+            margin-top:30px;
+        }
+        
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Nhóm 1 - Giới Thiệu Nhóm 1</h1>
+    <p>Chúng tôi là những người đầy nhiệt huyết sống hết mình, cháy với đam mê</p>
+</header>
+
+<section class="members">
+    <div class="card" onclick="showInfo('Hí mọi người!.',
+    'Mình là Nguyễn Việt Dũng',
+    'Mình là trưởng nhóm và cũng là coder của nhóm 1',
+    'Mình là người như mọi người đã biết,chẳng có gì là đặc biệc cả.')"> 
+    
+     <h3>Nguyễn Việt Dũng</h3>
+     <p class="job">  Học sinh lớp 12A8 </p>
+           <img src="img/z7509399503668_e8cae21e09123b89c17875dc3520a344.jpg" alt="Nguyễn Việt Dũng" class="avatar" width=40%>
+        
+        <h4 style="font-size: 20px;">🎯 Sở thích</h4>
+        <ul>
+            <li style="font-size: 15px;">📚 Học tập</li>
+            <li style="font-size: 15px;">💻 Công nghệ</li>
+            <li style="font-size: 15px;">⚽ Thể thao</li>
+        </ul>
+
+        <h4 style="font-size: 20px;">📞 Liên hệ</h4>
+        
+<a href="https://www.facebook.com/FacebookNguyenVietdung08/"
+   target="_blank"
+   onclick="event.stopPropagation();">
+    <i class="fa-brands fa-facebook"></i>
+</a>
+        <p style="font-size: 10px;">Email: dhung6432@gmail.com</p>
+        <p style="font-size: 10px;">SĐT: 0965090208</p>
+    </div>
+
+    <div class="card" onclick="showInfo('Heeluu!.',
+    'Mình là Mai Phương',
+    'Mình là programming language assistant của nhóm!',
+    'Như nhận xét của mọi người xung quanh mình là một người bạn dễ gần, hay tươi cười với mọi người và khá là thông minh nhanh nhẹn.')"> 
+    
+     <h3>Nguyễn Thị Mai Phương</h3>
+     <p class="job">  Học sinh lớp 12A8 </p>
+           <img src="img/9809a5e3-1a41-48a4-920b-f3888551bf39.jpg" alt="Nguyễn Thị Mai Phương" class="avatar" width=40%>
+        
+        <h4 style="font-size: 20px;">🎯 Sở thích</h4>
+        <ul>
+            <li style="font-size: 15px;">📓 đọc truyện</li>
+            <li style="font-size: 15px;">🎶 Nghe nhạc</li>
+            <li style="font-size: 15px;">🛌 Ngủ</li>
+            <li style="font-size: 15px;">🖥️ Xem phim</li>
+        </ul>
+
+        <h4 style="font-size: 20px;">📞 Liên hệ</h4>
+        
+<a href="https://www.facebook.com/songuyn11"
+   target="_blank"
+   onclick="event.stopPropagation();">
+    <i class="fa-brands fa-facebook"></i>
+</a>
+        <p style="font-size: 10px;"> maiphuongnguyen0608@gmail.com</p>
+    </div>
+
+    <div class="card" onclick="showInfo('Hí mọi người!.',
+    'Heluu! Mình là Thanh Lam',
+    'Mình là information assistant của nhóm!',
+    'mình là một cô gái hoạt bát hay cười dễ gần và có đôi phần nhây 😊')"> 
+    
+     <h3>Trần Nguyễn Thanh Lam</h3>
+     <p class="job">  Học sinh lớp 12A8 </p>
+           <img src="img/366f7604-017e-4d15-800b-8fd2a63bc08d.jpg" alt="Trần Nguyễn Thanh Lam" class="avatar" width=40%>
+        
+        <h4 style="font-size: 20px;">🎯 Sở thích</h4>
+        <ul>
+            <li style="font-size: 15px;">✈️ Đi du lịch</li>
+            <li style="font-size: 15px;">🎶 Nghe nhạc</li>
+            <li style="font-size: 15px;">📸 Chụp ảnh</li>
+        </ul>
+
+        <h4 style="font-size: 20px;">📞 Liên hệ</h4>
+        
+<a href="https://www.facebook.com/ttl1022"
+   target="_blank"
+   onclick="event.stopPropagation();">
+    <i class="fa-brands fa-facebook"></i>
+</a>
+        <p style="font-size: 10px;">Email: lamtr708@gmail.com</p>
+    
+    </div>
+
+    <div class="card" onclick="showInfo('HIIII!.',
+    'Mình là Phương Linh',
+    'Mình là image assistant của nhóm!',
+    'mình là một cô gái thông minh và chăm chỉ nhưng đó chỉ và rất là hiền 😊')"> 
+    
+     <h3>Nguyễn Phương Linh</h3>
+     <p class="job">  Học sinh lớp 12A8 </p>
+           <img src="img/z7518996466230_36cc3543b5a089148650b142600ebaea.jpg" alt="Nguyễn Phương Linh" class="avatar" width=40%>
+        
+        <h4 style="font-size: 20px;">🎯 Sở thích</h4>
+        <ul>
+            <li style="font-size: 15px;">🛌 Ngủ</li>
+            <li style="font-size: 15px;">✈️ Đi du lịch</li>
+            <li style="font-size: 15px;">📸 Chụp ảnh</li>
+        </ul>
+
+        <h4 style="font-size: 20px;">📞 Liên hệ</h4>
+        
+<a href="https://www.facebook.com/nguyen.phuong.linh.113612#"
+   target="_blank"
+   onclick="event.stopPropagation();">
+    <i class="fa-brands fa-facebook"></i>
+</a>
+        <p style="font-size: 10px;"> linhh1208@gmail.com</p>
+        
+    </div>
+
+    <div class="card" onclick="showInfo('Hí AE!.',
+    'Mình tên là Minh Phúc (Pác Minh Phu một tên gọi khác 😆)',
+    'Mình là coder\'s assistant của nhóm 1',
+    'Mình là IDOR của nhóm 1😘. Mọi người hay nói mình là một anh chàng kều vui tính và hóm hỉnh!')"> 
+    
+     <h3>Phạm Minh Phúc</h3>
+     <p class="job">  Học sinh lớp 12A8 </p>
+           <img src="img/64723735-135a-41d9-ab9c-dc50c8ddedf9.jpg" alt="Phạm Minh Phúc" class="avatar" width=40%>
+        
+        <h4 style="font-size: 20px;">🎯 Sở thích</h4>
+        <ul>
+            <li style="font-size: 15px;">📚 Học tập</li>
+            <li style="font-size: 15px;">💻 Công nghệ</li>
+            <li style="font-size: 15px;">⚽ Thể thao</li>
+        </ul>
+
+        <h4 style="font-size: 20px;">📞 Liên hệ</h4>
+        
+<a href="https://www.facebook.com/pham.phuc.350891#/"
+   target="_blank"
+   onclick="event.stopPropagation();">
+    <i class="fa-brands fa-facebook"></i>
+</a>
+        <p style="font-size: 10px;">YG entertainment</p>
+    </div>
+    
+
+    <div class="card" onclick="showInfo('Chào mọi người!.',
+    'Mình là Tuấn Nghĩa',
+    'Mình là editor của nhóm 1',
+    ' Mình được nhận xét là một chàng trai tử tế ngoan ngoãn hiền hậu dễ gần và thông minh !')"> 
+    
+     <h3>Lê Tuấn Nghĩa</h3>
+     <p class="job">  Học sinh lớp 12A8 </p>
+           <img src="img/z7519058518359_663c5b4a897d62ad8b0260c55abc96ad.jpg" alt="Lê Tuấn Nghĩa" class="avatar" width=40%>
+        
+        <h4 style="font-size: 20px;">🎯 Sở thích</h4>
+        <ul>
+            <li style="font-size: 15px;">📚 Học tập</li>
+            <li style="font-size: 15px;">💻 Công nghệ</li>
+            <li style="font-size: 15px;">⚽ Thể thao</li>
+        </ul>
+
+        <h4 style="font-size: 20px;">📞 Liên hệ</h4>
+        
+<a href="https://www.facebook.com/nghia.letuan.2508#"
+   target="_blank"
+   onclick="event.stopPropagation();">
+    <i class="fa-brands fa-facebook"></i>
+</a>
+        <p style="font-size: 10px;">Email: letuannghia258@gmail.com</p>
+       
+    </div>
+
+    <div class="card" onclick="showInfo('Hí mọi người!.',
+    'Mình là Minh Đức ',
+    'Mình là good-for-nothing của nhóm',
+    'Mình là người như mọi người đã biết,mình là một thằng ngông ngông vênh váo.')"> 
+    
+     <h3>Nguyễn Minh Đức</h3>
+     <p class="job">  Học sinh lớp 12A8 </p>
+           <img src="img/z7529495907916_69425ef2b9cef2f8d878ad252bfd84f5.jpg" alt="Nguyễn Minh Đức" class="avatar" width=40%>
+        
+        <h4 style="font-size: 20px;">🎯 Sở thích</h4>
+        <ul>
+            <li style="font-size: 15px;">📚 Học tập</li>
+            <li style="font-size: 15px;">💻 Công nghệ</li>
+            <li style="font-size: 15px;">⚽ Thể thao</li>
+        </ul>
+
+        <h4 style="font-size: 20px;">📞 Liên hệ</h4>
+        
+<a href="https://www.facebook.com/nguyen.minh.duc.84013"
+   target="_blank"
+   onclick="event.stopPropagation();">
+    <i class="fa-brands fa-facebook"></i>
+</a>
+        <p style="font-size: 10px;">Email: ducngu123@gmail.com</p>
+    </div>
+
+    <div class="card" onclick="showInfo('Hí mọi người!.',
+    'Mình là Nhật',
+    'Mình là coder\'s assistant của nhóm ',
+    'Mọi người nói mình là một người thông minh và đẹp trai 😆')"> 
+    
+     <h3>Hoàng Việt Nhật</h3>
+     <p class="job">  Học sinh lớp 12A8 </p>
+           <img src="img/617651894_2278025399360643_5040956767742931747_n.jpg" alt="Hoàng Việt Nhật" class="avatar" width=40%>
+        
+        <h4 style="font-size: 20px;">🎯 Sở thích</h4>
+        <ul>
+            <li style="font-size: 15px;">📚 Học tập</li>
+            <li style="font-size: 15px;">💻 lập trình</li>
+            <li style="font-size: 15px;">⚽ Thể thao</li>
+        </ul>
+
+        <h4 style="font-size: 20px;">📞 Liên hệ</h4>
+        
+<a href="https://www.facebook.com/nhat.hoangviet.58"
+   target="_blank"
+   onclick="event.stopPropagation();">
+    <i class="fa-brands fa-facebook"></i>
+</a>
+        <p style="font-size: 10px;">Email: nhatrac22@gmail.com</p>
+    
+    </div>
+
+</section>
+
+<!-- Popup -->
+<div class="popup" id="popup">
+    <div class="popup-content">
+        <span class="close" onclick="closePopup()">&times;</span>
+        <h2 id="name"></h2>
+        <h4 id="role"></h4>
+        <p id="desc"></p>
+    </div>
+</div>
+<a href="videos.html" class="btn-video">Xem Video</a>
+
+
+<footer>
+    <p>© 2026| Thiết kế bởi Team ONE 💙</p>
+</footer>
+
+<script>
+    function showInfo(name, role, desc){
+        document.getElementById("name").innerText = name;
+        document.getElementById("role").innerText = role;
+        document.getElementById("desc").innerText = desc;
+        document.getElementById("popup").style.display = "flex";
+    }
+
+    function closePopup(){
+        document.getElementById("popup").style.display = "none";
+    }
+</script>
+<script>
+const cards = document.querySelectorAll(".card");
+
+cards.forEach(card => {
+    card.addEventListener("mousemove", (e) => {
+        const x = e.offsetX;
+        const y = e.offsetY;
+        const width = card.offsetWidth;
+        const height = card.offsetHeight;
+
+        const rotateX = (y - height/2) / 15;
+        const rotateY = (width/2 - x) / 15;
+
+        card.style.transform = 
+            `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
+    });
+
+    card.addEventListener("mouseleave", () => {
+        card.style.transform = "rotateX(0) rotateY(0) scale(1)";
+    });
+});
+</script>
+
+</body>
+</html>
